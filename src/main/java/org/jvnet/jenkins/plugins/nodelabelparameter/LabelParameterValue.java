@@ -161,6 +161,9 @@ public class LabelParameterValue extends ParameterValue {
      */
     @Override
     public void buildEnvironment(Run<?,?> build, EnvVars env) {
+    	if (name == "" || label == "") {
+    		return;
+    	}
         env.put(name, label);
     }
 
